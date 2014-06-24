@@ -1,3 +1,7 @@
+package cc4102.kdtree.tree;
+
+import cc4102.util.TSPPoint;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Claud
@@ -7,25 +11,25 @@
  */
 public class KDLeaf extends KDNode {
 
-    protected KDPoint point;
+    protected TSPPoint point;
 
-    public KDLeaf(KDPoint point) {
+    public KDLeaf(TSPPoint point) {
         this.point = point;
     }
 
     @Override
-    public KDLeaf searchNeighbor(KDPoint q) {
+    public KDLeaf searchNeighbor(TSPPoint q) {
 
         return this;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     @Override
-    public double distance(KDPoint q) {
+    public double distance(TSPPoint q) {
         return point.distance(q);  //To change body of implemented methods use File | Settings | File Templates.
     }
 
     @Override
-    public KDLeaf anotherSearch(KDNode currentBest, double currentDistance, KDPoint q){
+    public KDLeaf anotherSearch(KDNode currentBest, double currentDistance, TSPPoint q){
         if( point.distance(q)<currentDistance){
             return this;
         }
@@ -33,7 +37,7 @@ public class KDLeaf extends KDNode {
     }
 
     @Override
-    public boolean intersects(KDPoint q, double currentDistance) {
+    public boolean intersects(TSPPoint q, double currentDistance) {
         return point.distance(q)<=currentDistance;  //To change body of implemented methods use File | Settings | File Templates.
     }
 
@@ -48,7 +52,7 @@ public class KDLeaf extends KDNode {
     }
 
 
-    public KDPoint getPoint() {
+    public TSPPoint getPoint() {
         return point;
     }
 }

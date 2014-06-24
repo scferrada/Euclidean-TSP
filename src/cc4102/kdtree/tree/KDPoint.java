@@ -1,3 +1,4 @@
+package cc4102.kdtree.tree;
 /**
  * Created with IntelliJ IDEA.
  * User: Claud

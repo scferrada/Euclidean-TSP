@@ -1,3 +1,7 @@
+package cc4102.kdtree.tree;
+
+import cc4102.util.TSPPoint;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Claud
@@ -61,8 +65,8 @@ public class KDInternalNode extends KDNode {
 
     @Override
     public KDLeaf anotherSearch(KDNode aChild, double currentDistance, KDPoint q) {
-        KDLeaf bestLeft = new KDLeaf(new KDPoint(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY)),
-               bestRight = new KDLeaf(new KDPoint(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY));
+        KDLeaf bestLeft = new KDLeaf(new TSPPoint(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY)),
+               bestRight = new KDLeaf(new TSPPoint(Double.POSITIVE_INFINITY, Double.POSITIVE_INFINITY));
         if(left!=aChild && left.intersects(q,currentDistance)){
             bestLeft = left.anotherSearch(aChild, currentDistance, q);
         }

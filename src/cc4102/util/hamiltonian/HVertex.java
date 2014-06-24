@@ -11,8 +11,11 @@ import cc4102.util.TSPPoint;
  */
 public class HVertex {
     private HVertex next;
-
     private TSPPoint point;
+
+    public HVertex(TSPPoint tspPoint) {
+        point = tspPoint;
+    }
 
     public HVertex next() {
         return next;

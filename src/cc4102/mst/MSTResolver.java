@@ -1,6 +1,7 @@
 package cc4102.mst;
 
 import cc4102.EuclideanTSPResolver;
+import cc4102.util.graph.Graph;
 import cc4102.util.hamiltonian.HamiltonianCircuit;
 import cc4102.util.TSPPoint;
 
@@ -14,8 +15,11 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class MSTResolver implements EuclideanTSPResolver {
+
     @Override
     public HamiltonianCircuit resolveTSP(List<TSPPoint> points) {
+        Graph G = Graph.makeCompleteGraphWith(points);
+
         return null;  //To change body of implemented methods use File | Settings | File Templates.
     }
 }

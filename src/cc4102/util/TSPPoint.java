@@ -1,5 +1,7 @@
 package cc4102.util;
 
+import cc4102.kdtree.tree.Axis;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Sebastián
@@ -41,4 +43,39 @@ public class TSPPoint {
         public TSPPoint scaleBy(double v) {
             return new TSPPoint(x*v,y*v);
         }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        TSPPoint tspPoint = (TSPPoint) o;
+
+        if (Double.compare(tspPoint.x, x) != 0) return false;
+        if (Double.compare(tspPoint.y, y) != 0) return false;
+
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int result;
+        long temp;
+        temp = x != +0.0d ? Double.doubleToLongBits(x) : 0L;
+        result = (int) (temp ^ (temp >>> 32));
+        temp = y != +0.0d ? Double.doubleToLongBits(y) : 0L;
+        result = 31 * result + (int) (temp ^ (temp >>> 32));
+        return result;
+    }
+
+    public double getCoord(Axis axis) {
+        switch (axis){
+            case X:
+                return x;
+            case Y:
+                return y;
+            default:
+                return 0.0;
+        }
+    }
 }

@@ -1,3 +1,6 @@
+package cc4102.kdtree.tree;
+import cc4102.util.TSPPoint;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -20,7 +23,7 @@ public class KDMedianTree extends KDTree {
     }
 
     @Override
-    protected KDLine getLine(List<KDPoint> points, Axis axis) {
+    protected KDLine getLine(List<TSPPoint> points, Axis axis) {
         return new KDLine(axis, calcMedian(points, axis));  //To change body of implemented methods use File | Settings | File Templates.
     }
 

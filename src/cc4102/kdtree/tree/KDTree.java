@@ -1,3 +1,6 @@
+package cc4102.kdtree.tree;
+import cc4102.util.TSPPoint;
+
 import java.util.LinkedList;
 import java.util.List;
 
@@ -18,12 +21,12 @@ public abstract class KDTree {
         this.root = root;
     }
 
-    public KDNode constructKdtree(List<KDPoint> points, Axis axis){
+    public KDNode constructKdtree(List<TSPPoint> points, Axis axis){
         if(points.size() == 1 ){
             return new KDLeaf(points.get(0));
         }
         KDLine line = getLine(points, axis) ;
-        List<List<KDPoint>> partition = makePartition(points,line);
+        List<List<TSPPoint>> partition = makePartition(points,line);
 
         return new KDInternalNode(line,
                                   constructKdtree(partition.get(0),axis.negated()),
@@ -39,26 +42,26 @@ public abstract class KDTree {
         return root.usedSpace();
     }
 
-    protected List<List<KDPoint>> makePartition(List<KDPoint> points, KDLine line) {
-        List<KDPoint> low = new LinkedList<KDPoint>();
-        List<KDPoint> high = new LinkedList<KDPoint>();
+    protected List<List<TSPPoint>> makePartition(List<TSPPoint> points, KDLine line) {
+        List<TSPPoint> low = new LinkedList<TSPPoint>();
+        List<TSPPoint> high = new LinkedList<TSPPoint>();
 
-        for(KDPoint p: points){
+        for(TSPPoint p: points){
             // point in line is considered "low"
             if(p.getCoord(line.getAxis()) <= line.getPos() )
                 low.add(p);
             else
                 high.add(p);
         }
-        List<List<KDPoint>> part = new LinkedList<List<KDPoint>>();
+        List<List<TSPPoint>> part = new LinkedList<List<TSPPoint>>();
         part.add(low);
         part.add(high);
         return part;
     }
 
-    protected abstract KDLine getLine(List<KDPoint> points, Axis axis);
+    protected abstract KDLine getLine(List<TSPPoint> points, Axis axis);
 
-    public KDPoint closestNeighbor(KDPoint q){
+    public TSPPoint closestNeighbor(TSPPoint q){
 
         KDLeaf currentBest = root.searchNeighbor(q);
         double currentDistance = currentBest.distance(q);

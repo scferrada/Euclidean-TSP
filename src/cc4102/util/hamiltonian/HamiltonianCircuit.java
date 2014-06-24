@@ -1,5 +1,7 @@
 package cc4102.util.hamiltonian;
 
+import cc4102.util.TSPPoint;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Sebastián
@@ -10,4 +12,8 @@ package cc4102.util.hamiltonian;
 public class HamiltonianCircuit {
     private HVertex start;
     private HVertex end;
+
+    public HamiltonianCircuit(TSPPoint tspPoint) {
+        start = new HVertex(tspPoint);
+    }
 }

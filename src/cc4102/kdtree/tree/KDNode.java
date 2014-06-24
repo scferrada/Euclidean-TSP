@@ -1,3 +1,7 @@
+package cc4102.kdtree.tree;
+
+import cc4102.util.TSPPoint;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Claud
@@ -14,14 +18,14 @@ public abstract class KDNode {
         return parent;
     }
 
-    public abstract KDLeaf searchNeighbor(KDPoint q);
+    public abstract KDLeaf searchNeighbor(TSPPoint q);
 
 
-    public abstract double distance(KDPoint q);
+    public abstract double distance(TSPPoint q);
 
-    public abstract KDLeaf anotherSearch(KDNode currentBest, double currentDistance, KDPoint q);
+    public abstract KDLeaf anotherSearch(KDNode currentBest, double currentDistance, TSPPoint q);
 
-    public abstract boolean intersects(KDPoint q, double currentDistance);
+    public abstract boolean intersects(TSPPoint q, double currentDistance);
 
     public abstract int height();
 

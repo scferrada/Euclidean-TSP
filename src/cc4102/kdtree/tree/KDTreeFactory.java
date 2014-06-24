@@ -1,3 +1,6 @@
+package cc4102.kdtree.tree;
+import cc4102.util.TSPPoint;
+
 import java.util.List;
 
 /**
@@ -8,11 +11,7 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class KDTreeFactory {
-    public static KDTree makeMeanTreeWith(List<KDPoint> points) {
-        return new KDMeanTree(new KDMeanTree().constructKdtree(points, Axis.X));
-    }
-
-    public static KDTree makeMedianTreeWith(List<KDPoint> points) {
+    public static KDTree makeMedianTreeWith(List<TSPPoint> points) {
         return new KDMedianTree(new KDMedianTree().constructKdtree(points, Axis.X));
     }
 }

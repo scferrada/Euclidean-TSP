@@ -12,6 +12,22 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class Vertex {
-    private List<Edge> edges;
     private TSPPoint point;
+
+    public Vertex(TSPPoint p) {
+        point = p;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        Vertex vertex = (Vertex) o;
+        if (point != null ? !point.equals(vertex.point) : vertex.point != null) return false;
+        return true;
+    }
+
+    @Override
+    public int hashCode() {
+        return point != null ? point.hashCode() : 0;
+    }
 }
