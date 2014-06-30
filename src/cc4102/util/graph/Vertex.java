@@ -30,4 +30,8 @@ public class Vertex {
     public int hashCode() {
         return point != null ? point.hashCode() : 0;
     }
+
+    public TSPPoint getPoint() {
+        return point;
+    }
 }

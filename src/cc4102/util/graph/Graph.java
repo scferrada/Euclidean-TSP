@@ -15,7 +15,7 @@ import java.util.Map;
  */
 public class Graph {
     private List<Vertex> vertexes;
-    private Map<Vertex, Vertex> edges;
+    private double[][] adjacency;
 
     public void addVertex(Vertex v){
         vertexes.add(v);
@@ -26,11 +26,11 @@ public class Graph {
     }
 
     public void addEdge(Vertex from, Vertex to){
-        edges.put(from, to);
+        adjacency[vertexes.indexOf(from)][vertexes.indexOf(to)] =  from.getPoint().distance(to.getPoint());
     }
 
     public void addEdge(TSPPoint from, TSPPoint to) {
-        edges.put(new Vertex(from), new Vertex(to));
+        adjacency[vertexes.indexOf(new Vertex(from))][vertexes.indexOf(new Vertex(to))] =  from.distance(to);
     }
 
     public static Graph makeCompleteGraphWith(List<TSPPoint> points) {
