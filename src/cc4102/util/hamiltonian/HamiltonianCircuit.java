@@ -100,4 +100,15 @@ public class HamiltonianCircuit {
     public HVertex getFirst() {
         return start;
     }
+
+    public void appendTo(HVertex hVertex, HVertex minHc) {
+        if(minHc == end){
+            minHc.setNext(hVertex);
+            hVertex.setNext(start);
+            end=hVertex;
+        }
+        HVertex temp = minHc.next();
+        minHc.setNext(hVertex);
+        hVertex.setNext(temp);
+    }
 }

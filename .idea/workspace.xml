@@ -2,20 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="31e6a3d0-3de5-49f9-914d-5078772ed420" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/cc4102/app/CNRTest.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc4102/kdtree/ClosestNeighborResolver.java" afterPath="$PROJECT_DIR$/src/cc4102/kdtree/ClosestNeighborResolver.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc4102/util/hamiltonian/HamiltonianCircuit.java" afterPath="$PROJECT_DIR$/src/cc4102/util/hamiltonian/HamiltonianCircuit.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="T3.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="31e6a3d0-3de5-49f9-914d-5078772ed420" time="1404254409339" ignored="false" />
-    <file path="/CNRTest.java" changelist="31e6a3d0-3de5-49f9-914d-5078772ed420" time="1404254069962" ignored="false" />
+    <file path="/CNRTest.java" changelist="31e6a3d0-3de5-49f9-914d-5078772ed420" time="1404258717068" ignored="false" />
     <file path="/InputParser.java" changelist="31e6a3d0-3de5-49f9-914d-5078772ed420" time="1404254023039" ignored="false" />
-    <file path="/fragment.java" changelist="31e6a3d0-3de5-49f9-914d-5078772ed420" time="1404254541564" ignored="false" />
-    <file path="/ClosestNeighborResolver.java" changelist="31e6a3d0-3de5-49f9-914d-5078772ed420" time="1404255652349" ignored="false" />
-    <file path="/HamiltonianCircuit.java" changelist="31e6a3d0-3de5-49f9-914d-5078772ed420" time="1404255431678" ignored="false" />
+    <file path="/fragment.java" changelist="31e6a3d0-3de5-49f9-914d-5078772ed420" time="1404258471816" ignored="false" />
+    <file path="/ClosestNeighborResolver.java" changelist="31e6a3d0-3de5-49f9-914d-5078772ed420" time="1404258354230" ignored="false" />
+    <file path="/HamiltonianCircuit.java" changelist="31e6a3d0-3de5-49f9-914d-5078772ed420" time="1404257944697" ignored="false" />
+    <file path="/HVertex.java" changelist="31e6a3d0-3de5-49f9-914d-5078772ed420" time="1404256167211" ignored="false" />
+    <file path="/EuclideanTSPResolver.java" changelist="31e6a3d0-3de5-49f9-914d-5078772ed420" time="1404258544162" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,23 +31,7 @@
   </component>
   <component name="DebuggerManager">
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/cc4102/parser/InputParser.java" line="20" class="cc4102.parser.InputParser" package="cc4102.parser">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -96,79 +80,16 @@
       <file leaf-file-name="ClosestNeighborResolver.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc4102/kdtree/ClosestNeighborResolver.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="28" selection-start="1471" selection-end="1484" vertical-scroll-proportion="0.0">
+            <state line="36" column="43" selection-start="1164" selection-end="1164" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="TSPPoint.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc4102/util/TSPPoint.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="13" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HamiltonianCircuit.java" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/cc4102/util/hamiltonian/HamiltonianCircuit.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="41" selection-start="2499" selection-end="2499" vertical-scroll-proportion="0.33256352">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="HVertex.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc4102/util/hamiltonian/HVertex.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="86" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FastConvexHull.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc4102/convexhull/FastConvexHull.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="13" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ConvexHullResolver.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc4102/convexhull/ConvexHullResolver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="20" column="7" selection-start="549" selection-end="549" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EuclideanTSPResolver.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc4102/EuclideanTSPResolver.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="14" column="17" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InputParser.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="InputParser.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cc4102/parser/InputParser.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="31" column="31" selection-start="890" selection-end="890" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CNRTest.java" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/cc4102/app/CNRTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="22" column="31" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0">
+            <state line="20" column="0" selection-start="527" selection-end="527" vertical-scroll-proportion="0.36343613">
               <folding />
             </state>
           </provider>
@@ -194,9 +115,13 @@
       <list>
         <option value="$PROJECT_DIR$/src/com/company/Main.java" />
         <option value="$PROJECT_DIR$/src/cc4102/parser/InputParser.java" />
-        <option value="$PROJECT_DIR$/src/cc4102/app/CNRTest.java" />
+        <option value="$PROJECT_DIR$/src/cc4102/util/hamiltonian/HVertex.java" />
         <option value="$PROJECT_DIR$/src/cc4102/util/hamiltonian/HamiltonianCircuit.java" />
+        <option value="$PROJECT_DIR$/src/cc4102/convexhull/ConvexHullResolver.java" />
+        <option value="$PROJECT_DIR$/src/cc4102/mst/MSTResolver.java" />
+        <option value="$PROJECT_DIR$/src/cc4102/app/CNRTest.java" />
         <option value="$PROJECT_DIR$/src/cc4102/kdtree/ClosestNeighborResolver.java" />
+        <option value="$PROJECT_DIR$/src/cc4102/EuclideanTSPResolver.java" />
       </list>
     </option>
   </component>
@@ -433,6 +358,7 @@
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
     <property name="project.structure.last.edited" value="Project" />
+    <property name="OverrideImplement.combined" value="true" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
@@ -645,46 +571,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/cc4102/util/hamiltonian/HamiltonianCircuit.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="13" selection-start="260" selection-end="260" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc4102/EuclideanTSPResolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="17" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc4102/app/CHTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="8" selection-start="884" selection-end="884" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc4102/parser/InputParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="31" selection-start="890" selection-end="890" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.7.0_55/src.zip!/java/net/URLClassLoader.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="365" column="0" selection-start="13550" selection-end="13550" vertical-scroll-proportion="0.33259913" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc4102/parser/InputParser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="31" selection-start="890" selection-end="890" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/company/Main.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="34" selection-start="121" selection-end="121" vertical-scroll-proportion="0.0">
@@ -699,20 +585,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc4102/EuclideanTSPResolver.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="14" column="17" selection-start="298" selection-end="298" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc4102/util/TSPPoint.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="13" selection-start="195" selection-end="195" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cc4102/convexhull/FastConvexHull.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="8" column="13" selection-start="159" selection-end="159" vertical-scroll-proportion="0.0">
@@ -720,37 +592,95 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc4102/convexhull/ConvexHullResolver.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_55/src.zip!/java/io/BufferedReader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="20" column="7" selection-start="549" selection-end="549" vertical-scroll-proportion="0.0">
+        <state line="381" column="0" selection-start="12548" selection-end="12548" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc4102/app/CNRTest.java">
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_55/src.zip!/java/util/concurrent/atomic/AtomicLong.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="22" column="31" selection-start="659" selection-end="659" vertical-scroll-proportion="0.0">
+        <state line="102" column="0" selection-start="2472" selection-end="2472" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#0#6995#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_55/src.zip!/java/util/Random.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="89" column="0" selection-start="2919" selection-end="2919" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_55/src.zip!/java/lang/Math.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="714" column="0" selection-start="28746" selection-end="28746" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cc4102/util/hamiltonian/HVertex.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="31" column="86" selection-start="566" selection-end="566" vertical-scroll-proportion="0.0">
+        <state line="29" column="0" selection-start="558" selection-end="558" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc4102/kdtree/ClosestNeighborResolver.java">
+    <entry file="file://$PROJECT_DIR$/src/cc4102/util/TSPPoint.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="28" selection-start="1471" selection-end="1484" vertical-scroll-proportion="0.0">
+        <state line="32" column="22" selection-start="578" selection-end="578" vertical-scroll-proportion="0.33259913">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cc4102/util/hamiltonian/HamiltonianCircuit.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="41" selection-start="2499" selection-end="2499" vertical-scroll-proportion="0.33256352">
+        <state line="42" column="12" selection-start="948" selection-end="948" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc4102/mst/MSTResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="5" selection-start="654" selection-end="654" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc4102/app/CNRTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="23" column="8" selection-start="713" selection-end="713" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc4102/convexhull/ConvexHullResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="30" column="5" selection-start="1061" selection-end="1061" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc4102/EuclideanTSPResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="16" column="64" selection-start="386" selection-end="386" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc4102/kdtree/ClosestNeighborResolver.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="43" selection-start="1164" selection-end="1164" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc4102/parser/InputParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="20" column="0" selection-start="527" selection-end="527" vertical-scroll-proportion="0.36343613">
           <folding />
         </state>
       </provider>
