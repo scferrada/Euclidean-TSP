@@ -1,6 +1,5 @@
 package cc4102.util;
 
-import cc4102.kdtree.tree.Axis;
 
 /**
  * Created with IntelliJ IDEA.
@@ -66,16 +65,5 @@ public class TSPPoint {
         temp = y != +0.0d ? Double.doubleToLongBits(y) : 0L;
         result = 31 * result + (int) (temp ^ (temp >>> 32));
         return result;
-    }
-
-    public double getCoord(Axis axis) {
-        switch (axis){
-            case X:
-                return x;
-            case Y:
-                return y;
-            default:
-                return 0.0;
-        }
     }
 }

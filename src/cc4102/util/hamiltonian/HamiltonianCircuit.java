@@ -26,6 +26,7 @@ public class HamiltonianCircuit {
     public void appendVertex(HVertex v){
         end.setNext(v);
         end = v;
+        end.setNext(start);
     }
 
     public static HamiltonianCircuit constructWith(List<TSPPoint> points) {
@@ -55,5 +56,38 @@ public class HamiltonianCircuit {
         HVertex toAdd = new HVertex(p);
         v.setNext(toAdd);
         toAdd.setNext(temp);
+    }
+
+    public int length() {
+        int l = 0;
+        HVertex curr = start;
+        while(curr != end){
+            l++;
+            curr = curr.next();
+        }
+        return l+1;
+    }
+
+    public double distance() {
+        double d = 0.0;
+        HVertex curr = start;
+        while(curr != end){
+            d += curr.getPoint().distance(curr.next().getPoint());
+            curr = curr.next();
+        }
+        return d + start.getPoint().distance(end.getPoint());
+    }
+    public HVertex calcMinDistance(TSPPoint p) {
+        double min = Double.POSITIVE_INFINITY;
+        HVertex minVertex = start;
+        HVertex curr = start;
+        while (curr != end){
+            double distance = p.distance(curr.getPoint());
+            if(distance < min){
+                min = distance;
+                minVertex = curr;
+            }
+        }
+        return minVertex;
     }
 }

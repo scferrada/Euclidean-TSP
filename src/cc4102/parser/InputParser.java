@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class InputParser {
 
-    public List<TSPPoint> parseFile(String filename) throws IOException {
+    static public List<TSPPoint> parseFile(String filename) throws IOException {
         List<TSPPoint> points = new ArrayList<TSPPoint>();
         BufferedReader file = new BufferedReader(new FileReader(filename));
         String line = file.readLine();
