@@ -24,4 +24,8 @@ public class HVertex {
     public TSPPoint getPoint() {
         return point;
     }
+
+    public void setNext(HVertex next) {
+        this.next = next;
+    }
 }

@@ -2,6 +2,8 @@ package cc4102.util.hamiltonian;
 
 import cc4102.util.TSPPoint;
 
+import java.util.List;
+
 /**
  * Created with IntelliJ IDEA.
  * User: Sebastián
@@ -14,6 +16,44 @@ public class HamiltonianCircuit {
     private HVertex end;
 
     public HamiltonianCircuit(TSPPoint tspPoint) {
-        start = new HVertex(tspPoint);
+        start = end = new HVertex(tspPoint);
+    }
+
+    public HamiltonianCircuit() {
+
+    }
+
+    public void appendVertex(HVertex v){
+        end.setNext(v);
+        end = v;
+    }
+
+    public static HamiltonianCircuit constructWith(List<TSPPoint> points) {
+        HamiltonianCircuit res = new HamiltonianCircuit();
+        for(TSPPoint point : points){
+           res.appendVertex(new HVertex(point));
+        }
+        return res;
+    }
+
+    public HVertex getMinimumDistanceModuleTo(TSPPoint p) {
+        double min = Double.POSITIVE_INFINITY;
+        HVertex minVertex = start;
+        HVertex curr = start;
+        while (curr != end){
+            double distance = p.distance(curr.getPoint()) + p.distance(curr.next().getPoint()) - curr.getPoint().distance(curr.next().getPoint());
+            if(distance < min){
+                min = distance;
+                minVertex = curr;
+            }
+        }
+        return minVertex;
+    }
+
+    public void addPointAfter(TSPPoint p, HVertex v) {
+        HVertex temp = v.next();
+        HVertex toAdd = new HVertex(p);
+        v.setNext(toAdd);
+        toAdd.setNext(temp);
     }
 }

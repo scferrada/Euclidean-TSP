@@ -10,6 +10,7 @@ import cc4102.util.graph.Graph;
  * To change this template use File | Settings | File Templates.
  */
 public class MinimumSpanningTree {
+
     public static MinimumSpanningTree constructMST(Graph g){
         return null;
     }
