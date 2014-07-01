@@ -50,6 +50,7 @@ public class HamiltonianCircuit {
                 min = distance;
                 minVertex = curr;
             }
+            curr = curr.next();
         }
         return minVertex;
     }
@@ -90,6 +91,7 @@ public class HamiltonianCircuit {
                 min = distance;
                 minVertex = curr;
             }
+            curr = curr.next();
         }
         return minVertex;
     }
