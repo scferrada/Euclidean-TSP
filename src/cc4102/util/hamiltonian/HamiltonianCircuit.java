@@ -24,6 +24,9 @@ public class HamiltonianCircuit {
     }
 
     public void appendVertex(HVertex v){
+        if(start == null){
+            start = end = v;
+        }
         end.setNext(v);
         end = v;
         end.setNext(start);
