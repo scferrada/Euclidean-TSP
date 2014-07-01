@@ -13,9 +13,15 @@ public class ClosestNeighborResolver implements EuclideanTSPResolver{
     public HamiltonianCircuit resolveTSP(List<TSPPoint> points) {
 
         List<TSPPoint> leftovers = points;
-        int rand = (int) Math.random()*(leftovers.size()-1);
+        System.out.println(leftovers.size());
+        int rand = (int) (Math.random()*(leftovers.size()-1));
+        System.out.println("random" + rand);
         HamiltonianCircuit hc = new HamiltonianCircuit(leftovers.get(rand));
+        System.out.println(leftovers.get(rand));
+        System.out.println(hc.getFirst().getPoint());
+
         leftovers.remove(rand);
+        System.out.println(leftovers.size());
 
         while (leftovers.size()>0){
             double min = Double.POSITIVE_INFINITY;
@@ -25,7 +31,9 @@ public class ClosestNeighborResolver implements EuclideanTSPResolver{
 
             for(TSPPoint cand: leftovers){
                 minHc = hc.calcMinDistance(cand);
+
                 double minp = cand.distance(minHc.getPoint());
+                System.out.println(minp);
                 if (minp<min){
                     min=minp;
                     p=cand;
@@ -34,6 +42,7 @@ public class ClosestNeighborResolver implements EuclideanTSPResolver{
             }
 
             leftovers.remove(indexp);
+            System.out.println(leftovers.size());
             hc.addPointAfter(p,minHc);
 
         }

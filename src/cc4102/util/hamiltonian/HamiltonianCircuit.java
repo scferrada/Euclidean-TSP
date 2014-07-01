@@ -14,6 +14,7 @@ import java.util.List;
 public class HamiltonianCircuit {
     private HVertex start;
     private HVertex end;
+    private TSPPoint first;
 
     public HamiltonianCircuit(TSPPoint tspPoint) {
         start = end = new HVertex(tspPoint);
@@ -94,5 +95,9 @@ public class HamiltonianCircuit {
             curr = curr.next();
         }
         return minVertex;
+    }
+
+    public HVertex getFirst() {
+        return start;
     }
 }
