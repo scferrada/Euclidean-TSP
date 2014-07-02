@@ -61,8 +61,8 @@ public class Experiment {
             HamiltonianCircuit circuit = resolver.resolveTSP(points);
             long end = System.nanoTime();
             double d = circuit.distance();
-            builder.append(end-start).append(";").append(d).append(";")
-                    .append(d/e.getValue()).append(";");
+            builder.append("\n Hull    ").append(end-start).append(";").append(d).append(";")
+                    .append(d/e.getValue()).append(" ");
 
             points = InputParser.parseFile("input/"+e.getKey()+".txt");
             resolver = new ClosestNeighborResolver();
@@ -70,8 +70,8 @@ public class Experiment {
             circuit = resolver.resolveTSP(points);
             end = System.nanoTime();
             d = circuit.distance();
-            builder.append(end-start).append(";").append(d).append(";")
-                    .append(d/e.getValue()).append("\n");
+            builder.append("\n ClosestN    ").append(end-start).append(";").append(d).append(";")
+                    .append(d/e.getValue()).append("\n\n");
         }
         pw.write(builder.toString());
         pw.close();
