@@ -12,19 +12,39 @@ import java.util.List;
  * To change this template use File | Settings | File Templates.
  */
 public class distanceMatrix {
+    double[] dm3;
     double [][] dm ;
+    List<List<Double>>dm2;
+
     public distanceMatrix(TSPPoint [] points){
-        dm = new double[points.length][points.length];
-        for(int i = 0; i<points.length;i++){
-            for(int j = 0; j<=i;j++){
-                dm[i][j] = dm[j][i] = points[i].distance(points[j]);
+        int n = points.length;
+        dm3 = new double[(n*(n+1))/2];
+        for(int j = 0; j<n;j++){
+            for(int i = 0; i<=j;i++){
+               dm3[((2*n*i +i - i*i)/2)+(j-i)] = points[i].distance(points[j]);
             }
         }
 
     }
 
-    public double [][] getDm(){
-        return dm;
+    public distanceMatrix(TSPPoint [] points, List<List<Double>>a){
+        dm2 = a;
+        for(int i = 0; i<points.length;i++){
+            for(int j = 0; j<=i;j++){
+                double dist = points[i].distance(points[j]);
+                a.get(i).set(j,dist);
+                a.get(j).set(i,dist);
+
+            }
+        }
+
     }
 
+    public double [] getDm(){
+        return dm3;
+    }
+
+    public List<List<Double>> getDM2(){
+        return dm2;
+    }
 }

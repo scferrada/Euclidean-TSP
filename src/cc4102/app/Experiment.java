@@ -3,6 +3,7 @@ package cc4102.app;
 import cc4102.EuclideanTSPResolver;
 import cc4102.convexhull.ConvexHullResolver;
 import cc4102.kdtree.ClosestNeighborResolver;
+import cc4102.kdtree.ClosestNeighborResolver2;
 import cc4102.parser.InputParser;
 import cc4102.util.TSPPoint;
 import cc4102.util.hamiltonian.HamiltonianCircuit;
@@ -25,26 +26,26 @@ import java.util.Map;
 public class Experiment {
     static private Map<String, Double> countries = new HashMap<>();
     static {
-        countries.put("canada", 1290319.0);
-        countries.put("djibouti", 6656.0);
-        countries.put("finland", 520527.0);
-        countries.put("greece", 300899.0);
-        countries.put("italy", 557315.0);
-        countries.put("japan", 491924.0);
-        countries.put("oman", 86891.0);
-        countries.put("qatar", 9352.0);
-        countries.put("sweden", 855597.0);
-        countries.put("uruguay", 79114.0);
+        //countries.put("canada", 1290319.0);
+        //countries.put("djibouti", 6656.0);
+        //countries.put("finland", 520527.0);
+        //countries.put("greece", 300899.0);
+        //countries.put("italy", 557315.0);
+        //countries.put("japan", 491924.0);
+        //countries.put("oman", 86891.0);
+        //countries.put("qatar", 9352.0);
+        //countries.put("sweden", 855597.0);
+        //countries.put("uruguay", 79114.0);
         countries.put("vietnam", 569288.0);
-        countries.put("western sahara", 27603.0);
-        countries.put("zimbabwe", 95345.0);
+        //countries.put("western sahara", 27603.0);
+        //countries.put("zimbabwe", 95345.0);
     }
 
     static private PrintWriter pw;
 
     static {
         try {
-            pw = new PrintWriter("results.txt");
+            pw = new PrintWriter("results6.txt");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -55,23 +56,25 @@ public class Experiment {
         for(Map.Entry<String, Double> e : countries.entrySet()){
             builder.append(e.getKey()).append(";").append(e.getValue()).append(";");
 
+            System.out.println("CNR");
             List<TSPPoint> points = InputParser.parseFile("input/"+e.getKey()+".txt");
-            EuclideanTSPResolver resolver = new ConvexHullResolver();
-            long start = System.nanoTime();
+            EuclideanTSPResolver resolver = new ClosestNeighborResolver2();
+            long start = System.currentTimeMillis();
             HamiltonianCircuit circuit = resolver.resolveTSP(points);
-            long end = System.nanoTime();
+            long end = System.currentTimeMillis();
             double d = circuit.distance();
-            builder.append("\n Hull    ").append(end-start).append(";").append(d).append(";")
+            builder.append("\n CNR    ").append(end-start).append(";").append(d).append(";")
                     .append(d/e.getValue()).append(" ");
-
-            points = InputParser.parseFile("input/"+e.getKey()+".txt");
+            System.out.println(e.getKey());
+            /*points = InputParser.parseFile("input/"+e.getKey()+".txt");
+            System.out.println("CNR");
             resolver = new ClosestNeighborResolver();
-            start = System.nanoTime();
+            start = System.currentTimeMillis();
             circuit = resolver.resolveTSP(points);
-            end = System.nanoTime();
+            end = System.currentTimeMillis();
             d = circuit.distance();
             builder.append("\n ClosestN    ").append(end-start).append(";").append(d).append(";")
-                    .append(d/e.getValue()).append("\n\n");
+                    .append(d/e.getValue()).append("\n\n"); */
         }
         pw.write(builder.toString());
         pw.close();
