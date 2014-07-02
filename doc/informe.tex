@@ -128,8 +128,19 @@ memoria RAM y procesador intel Core i7 de 3.630 GHz. Para la implementación se 
 Cada aproximación será implementada por una clase que extienda de la interfaz \verb+EuclideanTSPResolver+ cuyo método recibirá la lista de puntos debidamente leídos desde los archivos indicados\footnote{http://www.math.uwaterloo.ca/tsp/world/countries.html} y deben retornar un circuito hamiltoniano que incluya todos los puntos recibidos. Estos circuitos fueron implementados como listas enlazadas circulares.
 
 \subsection{Aproximación por Punto más Cercano}
-%Claudin escribe acá--------------------------------------
-%---------------------------------------------------------
+El algoritmo comienza con un conjunto de puntos P y el algoritmo se ejecuta de ls siguiente forma:
+\begin{enumerate}
+\item Se inicia el circuito C con un sólo punto de P, escogido arbitrariamente.
+\item En cada paso se identifica el punto p que no pertenece a C, cuya distancia a cualquier punto de C es mínima. Formalmente:
+ \[ p\not\in{C},\;\; \min_{q'\in{C}} dist(p,q') \] Extendemos el circuito C, de tal forma de que el punto encontrado esté exactamente después del punto con que minimiza la distancia.
+\item Si no quedan puntos en el circuito C, se retorna C.
+\end{enumerate}
+
+Para correr los experimentos se utilizó una Array para representar las distancias entre cada punto que esté en P. Aquí es fundamental tener cuidado con el tamaño del Array, ya que este puede superar fácilmente el límite del heap size. Por ello se intento reducir la cantidad de memoria basándonos en que la matriz de adyacencia es simétrica, entonces se llevó a cabo el cálculo de todas las distancias ordenadas estratégicamente.\\ \\
+Se utilizaron 2 listas para manejar los puntos: $Puntos$ $ visitados$ y $Puntos$ $por$ $visitar$.
+Luego se escoge un punto arbitrario: se añade a  $Puntos$ $ visitados$, se elimina de $Puntos por visita$r y se inicia el circuito con ese punto (Notar que  $Puntos$ $ visitados$ y el circuito son equivalentes). \\ \\
+En cada paso se añade el punto que minimiza la distancia a los puntos del circuito a la primera lista y se elimina el mismo de la segunda. Luego se añade ese punto al circuito.\\ \\
+El algoritmo termina cuando la lista de$Puntos$ $por$ $visitar$r esté vacía, por ende el circuito va a estar completo.
 
 \subsection{Aproximación por Envoltura Convexa}
 

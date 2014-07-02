@@ -3,6 +3,7 @@ package cc4102.app;
 import cc4102.EuclideanTSPResolver;
 import cc4102.convexhull.ConvexHullResolver;
 import cc4102.kdtree.ClosestNeighborResolver;
+import cc4102.kdtree.ClosestNeighborResolver2;
 import cc4102.parser.InputParser;
 import cc4102.util.TSPPoint;
 import cc4102.util.hamiltonian.HamiltonianCircuit;
@@ -19,8 +20,8 @@ import java.util.List;
  */
 public class CNRTest {
     static public void main(String[] args) throws IOException {
-        EuclideanTSPResolver resolver = new ClosestNeighborResolver();
-        List<TSPPoint> points = InputParser.parseFile("input/italy.txt");
+        EuclideanTSPResolver resolver = new ClosestNeighborResolver2();
+        List<TSPPoint> points = InputParser.parseFile("input/sweden.txt");
         long start = System.nanoTime();
         HamiltonianCircuit circuit = resolver.resolveTSP(points);
         long end = System.nanoTime();

@@ -5,43 +5,69 @@ import cc4102.util.hamiltonian.HVertex;
 import cc4102.util.hamiltonian.HamiltonianCircuit;
 import cc4102.util.TSPPoint;
 
+import java.awt.*;
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class ClosestNeighborResolver implements EuclideanTSPResolver{
 
     @Override
     public HamiltonianCircuit resolveTSP(List<TSPPoint> points) {
 
-        List<TSPPoint> leftovers = points;
-        int rand = (int) (Math.random()*(leftovers.size()-1));
+        //List<TSPPoint> leftovers = new ArrayList<TSPPoint>(points);
+        //TSPPoint [] a = leftovers.toArray(new TSPPoint[0]);
+        List<Integer> visitedPoints = new ArrayList<>();
+        List<Integer> porVisitar = new ArrayList<>();
+        //List<List<Double>> d = new ArrayList<>();
+        //List<Double> auxd = new ArrayList<>();
+        for(int i = 0; i<points.size(); i++){
+            porVisitar.add(i);
+            //auxd.add(0.0);
+        }
+        //for(int i = 0; i<points.size(); i++){
+          //  d.add(new ArrayList<Double>(auxd));
+        //}
+        //System.out.println("calculando matrix");
+        //distanceMatrix dist = new distanceMatrix(a,d);
+        //d=dist.getDM2();
+        //System.out.println("eeee");
+
+        int rand = (int) (Math.random()*(points.size()-1));
         HamiltonianCircuit hc = new HamiltonianCircuit();
-        hc.appendVertex(new HVertex(leftovers.get(rand)));
+        visitedPoints.add(rand);
+        int dPoint = rand;
+        porVisitar.remove((Object) rand);
+        hc.appendVertex(new HVertex(points.get(rand)));
+        Map<Point, Double> matrix = new HashMap<Point, Double>();
 
-        leftovers.remove(rand);
 
-        while (leftovers.size()>0){
+        while (porVisitar.size()>0){
             double min = Double.POSITIVE_INFINITY;
-            HVertex minHc= null;
-            TSPPoint p = null;
-            int indexp = -1;
+            int indexmnin=-1;
 
-            for(TSPPoint cand: leftovers){
-                HVertex vcand = hc.calcMinDistance(cand);
-                double minp = cand.distance(vcand.getPoint());
-                if (minp<min){
-                    min=minp;
-                    p=cand;
-                    minHc=vcand;
-                    indexp=leftovers.indexOf(cand);
+            for(int j:porVisitar){
+                matrix.put(new Point(dPoint,j),points.get(dPoint).distance(points.get(j)));
+            }
+            for(int i: visitedPoints){
+                for(int j: porVisitar){
+                    double candmin=matrix.get(new Point(i, j));
+
+                    if(candmin<min){
+                        min=candmin;
+                        indexmnin=j;
+                    }
                 }
             }
-            hc.appendTo(new HVertex(p),minHc);
-            leftovers.remove(indexp);
-
+            visitedPoints.add(indexmnin);
+            porVisitar.remove((Object) indexmnin);
+            dPoint=indexmnin;
+            hc.appendVertex(new HVertex(points.get(indexmnin)));
 
 
         }
 
-        return hc;  //To change body of implemented methods use File | Settings | File Templates.
+        return hc;
     }
 }
