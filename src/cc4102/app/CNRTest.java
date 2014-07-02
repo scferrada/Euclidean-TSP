@@ -20,7 +20,7 @@ import java.util.List;
 public class CNRTest {
     static public void main(String[] args) throws IOException {
         EuclideanTSPResolver resolver = new ClosestNeighborResolver();
-        List<TSPPoint> points = InputParser.parseFile("input/uruguay.txt");
+        List<TSPPoint> points = InputParser.parseFile("input/italy.txt");
         long start = System.nanoTime();
         HamiltonianCircuit circuit = resolver.resolveTSP(points);
         long end = System.nanoTime();

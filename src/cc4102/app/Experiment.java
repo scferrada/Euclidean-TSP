@@ -33,7 +33,7 @@ public class Experiment {
         countries.put("japan", 491924.0);
         countries.put("oman", 86891.0);
         countries.put("qatar", 9352.0);
-        countries.put("sweden", 855597.0);
+        //countries.put("sweden", 855597.0);
         countries.put("uruguay", 79114.0);
         countries.put("vietnam", 569288.0);
         countries.put("western sahara", 27603.0);
