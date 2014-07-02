@@ -111,4 +111,13 @@ public class HamiltonianCircuit {
         minHc.setNext(hVertex);
         hVertex.setNext(temp);
     }
+
+    public void print() {
+        HVertex curr = start;
+        while(curr != end){
+            System.out.print(curr.getPoint()+" ;");
+            curr = curr.next();
+        }
+        System.out.println(end.getPoint());
+    }
 }

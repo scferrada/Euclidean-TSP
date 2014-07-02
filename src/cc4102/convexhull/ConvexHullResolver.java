@@ -6,6 +6,7 @@ import cc4102.util.hamiltonian.HamiltonianCircuit;
 import cc4102.util.TSPPoint;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -22,10 +23,12 @@ public class ConvexHullResolver implements EuclideanTSPResolver {
         List<TSPPoint> pre_circuit = algorithm.execute((ArrayList<TSPPoint>) points);
         HamiltonianCircuit circuit = HamiltonianCircuit.constructWith(pre_circuit);
         points.removeAll(pre_circuit);
+        List<TSPPoint> backup = new ArrayList<>(points);
         for(TSPPoint p : points){
             HVertex v = circuit.getMinimumDistanceModuleTo(p);
-            TSPPoint pmin = getMinimumDistanceModuleFor(v, points);
+            TSPPoint pmin = getMinimumDistanceModuleFor(v, backup);
             circuit.addPointAfter(pmin, v);
+            backup.remove(pmin);
         }
         return circuit;
     }
