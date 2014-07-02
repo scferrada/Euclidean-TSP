@@ -52,7 +52,7 @@
 \vspace*{5cm}
 \begin{center}
 \huge  {Tarea 3}\\
-\Huge {Eucludean Traveling Salesman Problem}\\
+\Huge {Euclidean Travelling Salesman Problem}\\
 \vspace{6cm}
 \end{center}
 %----------------- NOMBRES ------------------------
@@ -80,7 +80,7 @@ Ayudantes: & Javiera Born\\
 \fancyhead[R]{\small \rm \textbf{\thepage}} %Derecha
 
 
-\fancyfoot[C]{\small \rm \textit{KD-Trees\\}} %Izquierda
+\fancyfoot[C]{\small \rm \textit{Euclidean Travelling Salesman Problem\\}} %Izquierda
 %\fancyfoot[R]{\small \rm \textit{Pie de página - Derecha}} %Derecha
 %\fancyfoot[C]{\thepage} %Centro
 
@@ -113,13 +113,10 @@ Además de revisar cuántas veces más distancia se recorre con los algoritmos r
 
 \subsection{Hipótesis}
 \begin{enumerate}
-\item Se espera que la altura de los árboles sea $O(\log(n))$, pues cada árbol intentará particionar el conjunto de puntos en dos mitades con la misma cantidad de elementos cada una.
-\item Dado lo anterior, se espera que la construcción tome tiempo $O(n\log(n))$, pues recorremos los $n$ puntos en los $\log(n)$. niveles que se espera tener.
-\item Dada la topología de la estructura, se espera que las consultas de vecino más cercano, se ejecuten en tiempo $O(\log(n))$.
-\item Además, se espera que el espacio utilizado por el árbol no sea superior a $O(n)$.
-\item Dado que tanto la media, como la mediana son medidas de centralización casi igualmente certeras, no se espera que la elección de uno por sobre el otro cause diferencias importantes en cuanto a la eficiencia de la construcción del árbol o del balanceo de la estructura resultante, lo que implica que tampoco habría una optimización en el tiempo de consulta ni en la altura del árbol ni en el espacio utilizado.
-\item El tener puntos de baja discrepancia, se espera que nos permita descartar ramas completas del árbol en el segundo recorrido en la consulta de punto más cercano, pues hay una menor probabilidad de intersección/colisión respecto a una distribución aleatoria de puntos, por lo que se espera que las consultas en árboles construidos sobre puntos de baja discrepancia sean más rápidas.
-\item Claramente, los experimentos en memoria secundaria demorarán mayor tiempo en ejecutarse, con $O(n)$ accesos a disco, en promedio durante la construcción del árbol ($n$ escrituras) y cantidad logarítmica de accesos para la búsqueda (Asumiendo un nodo por bloque, sin buffer).
+\item Se busca comprobar que las aproximaciones por MST y por punto más cercano sean una 2-aproximación al problema, es decir, que \[ \frac{ALG(x)}{OPT(x)}\leq 2 \]
+\item Se espera que la heurística de envoltura convexa funcione bastante bien para estos casos, siendo entre 3 y 4 veces el óptimo.
+\item Las aproximaciones formales deben tomar bastante tiempo, del orden de $n^2$, MST por las operaciones de grafos (crear grafo completo y calcular todas las distancias) y punto más cercano debido a que compara los puntos en el circuito con las que no, $n$ veces.
+\item La heurística de envoltura convexa debe tomar tiempo $O(n\log(n))$, pues el algoritmo para encontrar la envoltura toma tiempo de ese orden y luego entrar los arcos y puntos que minimizan las relaciones toma $O(n)$. 
 \end{enumerate}
 
 \subsection{Ambiente Operacional}
@@ -128,38 +125,22 @@ memoria RAM y procesador intel Core i7 de 3.630 GHz. Para la implementación se 
 
 \newpage
 \section{Diseño de las Aproximaciones y Experimentos}
-Cada aproximación será implementada por una clase que extienda de la interfaz \verb+EuclideanTSPResolver+ cuyo método recibirá la lista de puntos debidamente leídos desde los archivos indicados\footnote{http://www.math.uwaterloo.ca/tsp/world/countries.html}
+Cada aproximación será implementada por una clase que extienda de la interfaz \verb+EuclideanTSPResolver+ cuyo método recibirá la lista de puntos debidamente leídos desde los archivos indicados\footnote{http://www.math.uwaterloo.ca/tsp/world/countries.html} y deben retornar un circuito hamiltoniano que incluya todos los puntos recibidos. Estos circuitos fueron implementados como listas enlazadas circulares.
 
 \subsection{Aproximación por Punto más Cercano}
-Un árbol tiene un nodo raíz, sabe como construirse a partir de un set de puntos y es capaz de recibir consultas de vecino más cercano a un punto. Este árbol debe ``decidir'' cómo particionar los nodos, es por esto que se crearon dos tipos de árboles, un árbol que particiona por mediana y otro por media aritmética. Entonces usando un Template Pattern, el árbol KD genérico sabe cómo construirse y son los hijos los que definen el criterio para seleccionar la recta de partición, según el siguiente diagrama de clases:
-
-Por otro lado, son Nodos quienes guardan la información del árbol, pues este solo tiene un puntero al nodo raíz. Hay nodos de dos tipos, los internos guardan las rectas que particionan el espacio y las hojas guardan la información de los puntos, por lo que se tiene el siguente diagrama de clases:
-
-Los nodos también son los responsables de recorrer el árbol durante las consultas, hacia los hijos y hacia el padre, además son los que calculan la intersección entre los sectores que delimitan y el círculo de consulta.
+%Claudin escribe acá--------------------------------------
+%---------------------------------------------------------
 
 \subsection{Aproximación por Envoltura Convexa}
 
-% -----Explicación de cómo funciona la construcción-------
-La construcción se hace recursivamente, con caso base un conjunto de puntos de tamaño $1$. En cada fase se particiona el conjunto de acuerdo al criterio de mediana o media, intercalando el eje en cada nivel. El código es bastante simple y se presenta a continuación:
-\begin{lstlisting}
-public KDNode constructKdtree(List<KDPoint> points, Axis axis){
-        if(points.size() == 1 ){
-            return new KDLeaf(points.get(0));
-        }
-        KDLine line = getLine(points, axis) ; //This line depends on the Tree citeria
-        List<List<KDPoint>> partition = makePartition(points,line);
-        return new KDInternalNode(line,
-                                  constructKdtree(partition.get(0),axis.negated()),
-                                  constructKdtree(partition.get(1),axis.negated()));
-    } 
-\end{lstlisting}
-
-Las diferentes implementaciones de getLine y el método partition pueden encontrarse en los anexos
-% -------------------------------------------------------------
+Esta heurística, comienza con un circuito representado por la envoltura convexa del conjunto de ciudades. Esta envoltura se obtiene utilizando un recurso provisto en internet y que puede ser encontrado en \url{https://code.google.com/p/convex-hull/source/browse/Convex+Hull}. Particularmente, se utilizó la clase \verb+FastConvexHull.java+.\\
+Una vez obtenido ese circuíto, se itera por el resto de las ciudades interiores a la enovltura, y por cada ciudad $p$, se busca el arco $(p1,p2)$ (obtenemos el puntero al vértice que contiene a $p1$) en el circuíto que minimiza la expresión \[ dist(p,p1)+dist(p,p2)-dist(p1,p2) \] luego, entre todos los puntos que aun no están en el circuíto, se busca aquel $p^*$ que minimiza \[ \frac{dist(p^*,p1)+dist(p^*,p2)}{dist(p1,p2)} \] entonces se agrega este $p^*$ al circuíto, entre $p1$ y $p2$, lo que es fácil, pues ya tenemos el puntero hacia $p1$ y agregar un elemento entre dos vértices es $O(1)$ pues nuestros circuitos hamiltonianos son listas enlazadas.\\
+El código de búsqueda de los arcos y puntos que minimizan las relaciones puede encontrarse en los anexos.
 
 
 \subsection{Diseño de los Experimentos}
-Los experimentos consistieron en construir árboles KD con arreglos de puntos de tamaños sucesivamente más grandes (tamaño $2^i$, $i\in\{10,...,20\}$ en las diferentes combinaciones de criterio de partición y de distribución de puntos y medimos su tiempo, la altura del árbol y la cantidad de espacio en memoria que utiliza. Luego a cada sabor de árbol se le realizan consultas y se mide el tiempo que demora en contestar. Cada experimento se repite las veces necesarias para que el error sea menor al 5\% (i.e., hasta que $\frac{stdv}{mean}\leq 0.05$). Para detalles de la implementación de la batería de experimentos, referirse al código fuente adjunto.
+Los experimentos consisten en ejecutar las aproximaciones sobre los datos de los diferentes países y para cada uno de ellos, calcular el ratio $\frac{ALG(x)}{OPT(x)}$ donde $F(x)$ es la distancia recorrida por el algoritmo $F$ sobre las ciudades de $x$. Por lo tanto, este ratio nos dice cuántas veces el óptimo es capaz de conseguir nuestra aproximación.\\
+Además se medirán los tiempos de ejecución de cada aproximación, sobre cada set de datos, así podremos ver el \textit{trade off} que existe entre obtener una mejor solución y el tiempo requerido para obtenerla.
 
 \newpage
 \section{Resultados}
