@@ -22,7 +22,7 @@ import java.util.List;
 public class CHTest {
     static public void main(String[] args) throws IOException {
         EuclideanTSPResolver resolver = new ConvexHullResolver();
-        List<TSPPoint> points = InputParser.parseFile("input/djibouti.txt");
+        List<TSPPoint> points = InputParser.parseFile("input/uruguay.txt");
         HamiltonianCircuit circuit = resolver.resolveTSP(points);
         System.out.println(circuit.length() + " circ, " + points.size() + " points");
         System.out.println("Total distance: "+circuit.distance());
