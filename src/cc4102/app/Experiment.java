@@ -45,7 +45,7 @@ public class Experiment {
 
     static {
         try {
-            pw = new PrintWriter("results6.txt");
+            pw = new PrintWriter("results.txt");
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
@@ -66,15 +66,15 @@ public class Experiment {
             builder.append(end-start).append(";").append(d).append(";")
                     .append(d/e.getValue()).append(" ");
             System.out.println(e.getKey());
-            /*points = InputParser.parseFile("input/"+e.getKey()+".txt");
+            points = InputParser.parseFile("input/"+e.getKey()+".txt");
             System.out.println("CNR");
-            resolver = new ClosestNeighborResolver();
+            resolver = new ClosestNeighborResolver2();
             start = System.currentTimeMillis();
             circuit = resolver.resolveTSP(points);
             end = System.currentTimeMillis();
             d = circuit.distance();
             builder.append("\n ClosestN    ").append(end-start).append(";").append(d).append(";")
-                    .append(d/e.getValue()).append("\n\n"); */
+                    .append(d/e.getValue()).append("\n\n");
         }
         pw.write(builder.toString());
         pw.close();

@@ -2,11 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a8d9193a-e169-4348-9352-57fbaa7370e9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/results5.txt" afterPath="$PROJECT_DIR$/results5.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/informe.pdf" afterPath="$PROJECT_DIR$/doc/informe.pdf" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/informe.tex" afterPath="$PROJECT_DIR$/doc/informe.tex" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc4102/app/Experiment.java" afterPath="$PROJECT_DIR$/src/cc4102/app/Experiment.java" />
     </list>
     <ignored path="T3.iws" />
     <ignored path=".idea/workspace.xml" />
-    <file path="/Dummy.txt" changelist="a8d9193a-e169-4348-9352-57fbaa7370e9" time="1404329828941" ignored="false" />
+    <file path="/Dummy.txt" changelist="a8d9193a-e169-4348-9352-57fbaa7370e9" time="1404526005654" ignored="false" />
     <file path="/fragment.java" changelist="a8d9193a-e169-4348-9352-57fbaa7370e9" time="1404329959537" ignored="false" />
     <file path="/distanceMatrix.java" changelist="a8d9193a-e169-4348-9352-57fbaa7370e9" time="1404326036097" ignored="false" />
     <file path="/Experiment.java" changelist="a8d9193a-e169-4348-9352-57fbaa7370e9" time="1404327700677" ignored="false" />
@@ -35,23 +37,6 @@
     <disable_hints />
   </component>
   <component name="DebuggerManager">
-    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/src/cc4102/kdtree/ClosestNeighborResolver2.java" line="24" class="cc4102.kdtree.ClosestNeighborResolver2" package="cc4102.kdtree">
-        <option name="ENABLED" value="true" />
-        <option name="LOG_ENABLED" value="false" />
-        <option name="LOG_EXPRESSION_ENABLED" value="false" />
-        <option name="REMOVE_AFTER_HIT" value="false" />
-        <option name="SUSPEND_POLICY" value="SuspendAll" />
-        <option name="SUSPEND" value="true" />
-        <option name="COUNT_FILTER_ENABLED" value="false" />
-        <option name="COUNT_FILTER" value="0" />
-        <option name="CONDITION_ENABLED" value="true" />
-        <option name="CLASS_FILTERS_ENABLED" value="false" />
-        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
-        <option name="CONDITION" value="" />
-        <option name="LOG_MESSAGE" value="" />
-      </breakpoint>
-    </line_breakpoints>
     <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
@@ -89,6 +74,23 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/src/cc4102/kdtree/ClosestNeighborResolver2.java" line="24" class="cc4102.kdtree.ClosestNeighborResolver2" package="cc4102.kdtree">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -107,19 +109,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ClosestNeighborResolver2.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="ClosestNeighborResolver2.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc4102/kdtree/ClosestNeighborResolver2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="147" selection-start="856" selection-end="856" vertical-scroll-proportion="0.78902954">
+            <state line="49" column="53" selection-start="1524" selection-end="1524" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Experiment.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="Experiment.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/cc4102/app/Experiment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="47" column="42" selection-start="1468" selection-end="1468" vertical-scroll-proportion="0.0">
+            <state line="76" column="60" selection-start="2903" selection-end="2903" vertical-scroll-proportion="1.7489451">
               <folding />
             </state>
           </provider>
@@ -188,7 +190,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -315,6 +316,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="PackagesPane" />
     </panes>
   </component>
@@ -331,12 +333,12 @@
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="restartRequiresConfirmation" value="true" />
-    <property name="MemberChooser.showClasses" value="true" />
     <property name="FullScreen" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
     <property name="GoToClass.includeLibraries" value="false" />
-    <property name="options.searchVisible" value="true" />
-    <property name="dynamic.classpath" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="dynamic.classpath" value="false" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
@@ -486,7 +488,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -499,7 +501,6 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960895" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960895" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -511,6 +512,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960895" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -644,16 +646,12 @@
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_55/src.zip!/java/awt/Point.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="234" column="61" selection-start="6774" selection-end="6774" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="234" column="61" selection-start="6774" selection-end="6774" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_55/src.zip!/java/lang/Integer.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="640" column="0" selection-start="23945" selection-end="23945" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="640" column="0" selection-start="23945" selection-end="23945" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cc4102/kdtree/distanceMatrix.java">
@@ -677,9 +675,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc4102/app/Experiment.java">
+    <entry file="file://$PROJECT_DIR$/src/cc4102/kdtree/ClosestNeighborResolver2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="47" column="42" selection-start="1468" selection-end="1468" vertical-scroll-proportion="0.0">
+        <state line="49" column="53" selection-start="1524" selection-end="1524" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
@@ -691,9 +689,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc4102/kdtree/ClosestNeighborResolver2.java">
+    <entry file="file://$PROJECT_DIR$/src/cc4102/app/Experiment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="147" selection-start="856" selection-end="856" vertical-scroll-proportion="0.78902954">
+        <state line="76" column="60" selection-start="2903" selection-end="2903" vertical-scroll-proportion="1.7489451">
           <folding />
         </state>
       </provider>

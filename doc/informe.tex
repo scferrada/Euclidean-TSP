@@ -146,7 +146,6 @@ El algoritmo termina cuando la lista de$Puntos$ $por$ $visitar$r esté vacía, p
 
 Esta heurística, comienza con un circuito representado por la envoltura convexa del conjunto de ciudades. Esta envoltura se obtiene utilizando un recurso provisto en internet y que puede ser encontrado en \url{https://code.google.com/p/convex-hull/source/browse/Convex+Hull}. Particularmente, se utilizó la clase \verb+FastConvexHull.java+.\\
 Una vez obtenido ese circuíto, se itera por el resto de las ciudades interiores a la enovltura, y por cada ciudad $p$, se busca el arco $(p1,p2)$ (obtenemos el puntero al vértice que contiene a $p1$) en el circuíto que minimiza la expresión \[ dist(p,p1)+dist(p,p2)-dist(p1,p2) \] luego, entre todos los puntos que aun no están en el circuíto, se busca aquel $p^*$ que minimiza \[ \frac{dist(p^*,p1)+dist(p^*,p2)}{dist(p1,p2)} \] entonces se agrega este $p^*$ al circuíto, entre $p1$ y $p2$, lo que es fácil, pues ya tenemos el puntero hacia $p1$ y agregar un elemento entre dos vértices es $O(1)$ pues nuestros circuitos hamiltonianos son listas enlazadas.\\
-El código de búsqueda de los arcos y puntos que minimizan las relaciones puede encontrarse en los anexos.
 
 
 \subsection{Diseño de los Experimentos}
@@ -175,9 +174,11 @@ Como se dijo al comienzo, para cada algoritmo, mediremos dos variables, tiempo d
 \newpage 
 \subsection{Resultados Punto más Cercano}
 
+Ya ejecutado el experimento de ir formando el circuito hamiltoniano utilizando el algoritmo del $Punto$ $más$ $Cercano$, no se aplicó para el país de suecia por motivos que se escapan de nuestras manos. Los resultados muestran que el tiempo de ejecución de esta aproximación es $O(n^2)$. En cuanto al ratio $ALG(x)/OPT(x)$ para $n$ pequeños se alcanza lo esperado, es decir $ratio<2$, y para $n$ grande esta se escapa por mucho a lo esperado. Esto último se debe a que esta aproximación genera $n$ posibles instancias para el problema del viajero, por tanto depende del primer punto escogido la distancia que retornará el algoritmo.
+
  \begin{figure}[ht!]
  \centering
- \includegraphics[scale=0.7]{img/ratioclosest.png}
+ \includegraphics[scale=0.7]{img/timeclosest.png}
  \caption{Tiempo de ejecución vs. Cantidad de ciudades}
  \end{figure}
  
