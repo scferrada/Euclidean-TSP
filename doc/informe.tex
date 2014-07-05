@@ -192,12 +192,9 @@ Ya ejecutado el experimento de ir formando el circuito hamiltoniano utilizando e
 \newpage
 \section{Conclusiones}
 \begin{enumerate} 
-\item Efectivamente la altura de los árboles es del orden $O(\log(n))$ y además los KDTrees creados a partir de puntos de baja discrepancia poseen una menor altura, es decir la construcción es un poco más balanceada, notando que la diferencia no es completamente sustancial, pues la cantidad de nodos del árbol (espacio utilizado) es igualmente lineal.
-\item La construcción de KDTrees tomó tiempo $O(n\log(n))$, tal como fue previsto. Aunque los tiempos entre los árboles con criterio $mean$ y $median$ son muy distantes, lo atribuimos al $overhead$ del cálculo de la mediana para cada conjunto de puntos, el cual es $O(n)$.
-\item También se comprobó que las consultas de vecino más cercano se ejecutaron en tiempo $O(\log(n))$ para todo tipo de construcción y sin importar la distribución de puntos.
-\item Se verificó que el espacio ocupado por el árbol es del orden de $O(n)$. Todos los árboles de la misma cantidad de puntos ocupan el mismo espacio, luego tienen similar o idéntica cantidad de nodos, luego la diferencia en alturas entre árboles construídos según mediana y degún media son discordantes solo por un par de ramas y no por el último nivel completo.
-\item Nuestra hipótesis sobre las diferencias sobre la construcción del árbol fue errónea, dado que en la construcción del árbol el $mean$ fue mucho menor al otro, esto debido a que calcular $min$ y $max$ resultó ser más rápido que calcular la mediana..
-\item Que los puntos estén distribuidos de una manera uniforme presentó leves mejoras en cuanto a los tiempos de consulta, tal como se predijo en la hipótesis, aunque esta diferencia demostró ser bastante leve.
+\item La aproximación del punto más cercano, en nuestro caso, solo hasta un cierto $n$ de ciudades es una 2-aproximación. Puede que ser que la implementación del problema, buscar el punto que minimice la distancia con algún punto del circuito, sea un obstáculo al momento de encontrar el camino óptimo. Tal vez se podría obtener un mejor resultado si solo buscamos el punto más cercano al último punto agregado al circuito.
+\item Como se planteó el problema, la aproximación del punto más cercano toma tiempo $O(n^2)$ que es lo que se esperaba, esto debido a que se deben calcular las distancias pertinentes y las comparaciones realizadas.
+
 \end{enumerate}
 
 

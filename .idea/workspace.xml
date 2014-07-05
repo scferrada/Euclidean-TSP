@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a8d9193a-e169-4348-9352-57fbaa7370e9" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/informe.pdf" afterPath="$PROJECT_DIR$/doc/informe.pdf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/doc/informe.tex" afterPath="$PROJECT_DIR$/doc/informe.tex" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/cc4102/app/Experiment.java" afterPath="$PROJECT_DIR$/src/cc4102/app/Experiment.java" />
-    </list>
+    <list default="true" id="a8d9193a-e169-4348-9352-57fbaa7370e9" name="Default" comment="" />
     <ignored path="T3.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="/Dummy.txt" changelist="a8d9193a-e169-4348-9352-57fbaa7370e9" time="1404526005654" ignored="false" />
@@ -112,16 +108,25 @@
       <file leaf-file-name="ClosestNeighborResolver2.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc4102/kdtree/ClosestNeighborResolver2.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="49" column="53" selection-start="1524" selection-end="1524" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Experiment.java" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="distanceMatrix.java" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/cc4102/kdtree/distanceMatrix.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="15" column="23" selection-start="301" selection-end="301" vertical-scroll-proportion="0.03586498">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Experiment.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/cc4102/app/Experiment.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="76" column="60" selection-start="2903" selection-end="2903" vertical-scroll-proportion="1.7489451">
+            <state line="76" column="60" selection-start="2903" selection-end="2903" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -488,7 +493,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -654,13 +659,6 @@
         <state line="640" column="0" selection-start="23945" selection-end="23945" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc4102/kdtree/distanceMatrix.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="17" column="61" selection-start="329" selection-end="329" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://C:/Program Files/Java/jdk1.7.0_55/src.zip!/java/util/ArrayList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="825" column="0" selection-start="30206" selection-end="30206" vertical-scroll-proportion="0.0">
@@ -675,13 +673,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/cc4102/kdtree/ClosestNeighborResolver2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="53" selection-start="1524" selection-end="1524" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/cc4102/kdtree/ClosestNeighborResolver.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="49" column="22" selection-start="1681" selection-end="1681" vertical-scroll-proportion="0.0">
@@ -691,7 +682,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/cc4102/app/Experiment.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="76" column="60" selection-start="2903" selection-end="2903" vertical-scroll-proportion="1.7489451">
+        <state line="76" column="60" selection-start="2903" selection-end="2903" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc4102/kdtree/ClosestNeighborResolver2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/cc4102/kdtree/distanceMatrix.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="23" selection-start="301" selection-end="301" vertical-scroll-proportion="0.03586498">
           <folding />
         </state>
       </provider>
