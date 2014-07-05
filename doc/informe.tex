@@ -114,7 +114,7 @@ Además de revisar cuántas veces más distancia se recorre con los algoritmos r
 \subsection{Hipótesis}
 \begin{enumerate}
 \item Se busca comprobar que las aproximaciones por MST y por punto más cercano sean una 2-aproximación al problema, es decir, que \[ \frac{ALG(x)}{OPT(x)}\leq 2 \]
-\item Se espera que la heurística de envoltura convexa funcione bastante bien para estos casos, siendo entre 3 y 4 veces el óptimo.
+\item Se espera que la heurística de envoltura convexa funcione bastante bien para estos casos, siendo entre 3 y 4 veces el óptimo. Aunque también puede suceder que las soluciones empeoren al aumentar la cantidad de puntos.
 \item Las aproximaciones formales deben tomar bastante tiempo, del orden de $n^2$, MST por las operaciones de grafos (crear grafo completo y calcular todas las distancias) y punto más cercano debido a que compara los puntos en el circuito con las que no, $n$ veces.
 \item La heurística de envoltura convexa debe tomar tiempo $O(n\log(n))$, pues el algoritmo para encontrar la envoltura toma tiempo de ese orden y luego entrar los arcos y puntos que minimizan las relaciones toma $O(n)$. 
 \end{enumerate}
@@ -125,7 +125,7 @@ memoria RAM y procesador intel Core i7 de 3.630 GHz. Para la implementación se 
 
 \newpage
 \section{Diseño de las Aproximaciones y Experimentos}
-Cada aproximación será implementada por una clase que extienda de la interfaz \verb+EuclideanTSPResolver+ cuyo método recibirá la lista de puntos debidamente leídos desde los archivos indicados\footnote{http://www.math.uwaterloo.ca/tsp/world/countries.html} y deben retornar un circuito hamiltoniano que incluya todos los puntos recibidos. Estos circuitos fueron implementados como listas enlazadas circulares.
+Cada aproximación será implementada por una clase que extienda de la interfaz \verb+EuclideanTSPResolver+ cuyo método recibirá la lista de puntos debidamente leídos desde los archivos indicados\footnote{\url{http://www.math.uwaterloo.ca/tsp/world/countries.html}} y deben retornar un circuito hamiltoniano que incluya todos los puntos recibidos. Estos circuitos fueron implementados como listas enlazadas circulares.
 
 \subsection{Aproximación por Punto más Cercano}
 El algoritmo comienza con un conjunto de puntos P y el algoritmo se ejecuta de ls siguiente forma:
@@ -155,41 +155,38 @@ Además se medirán los tiempos de ejecución de cada aproximación, sobre cada 
 
 \newpage
 \section{Resultados}
-Los diferentes criterios de partición y tipo de distribución de puntos nos generaban 4 instancias de análisis para cada parámetro a medir.
+Se revisarán los resultados para cada aproximación, mirando cómo varían el tiempo y la distancia recorrida  en función de la cantidad de puntos que posee cada país, de marera que se puedan comprobar o desechar las hipótesis planteadas en el comienzo.
 
-\subsection{Canadá}
-El experimento consistía en medir cuánto demora en ser contruído el árbol. Los resultados se pueden visualizar en el siguiente gráfico:
+\subsection{Resultados Envoltura Convexa}
+Como se dijo al comienzo, para cada algoritmo, mediremos dos variables, tiempo de ejecución y distancia del circuito entregada por el algoritmo.
 
-A simple vista podemos confundir el orden de construcción, pero analizando por separado podemos decir que el tiempo de construcción es del orden de $O(n log(n))$.
+ \begin{figure}[ht!]
+ \centering
+ \includegraphics[scale=0.8]{img/timeconvexH.png}
+ \caption{Tiempo de ejecución vs. Cantidad de ciudades}
+ \end{figure}
+%··········································
+ \begin{figure}[ht!]
+ \centering
+ \includegraphics[scale=0.8]{img/ratioconvexH.png}
+ \caption{Ratio distancia algoritmo / distancia óptima}
+ \end{figure}
 
+\newpage 
+\subsection{Resultados Punto más Cercano}
 
-\newpage
-\subsection{Djibouti}
-El experimento consistía en calcular la altura que alcanzaban los KDTrees de un tamaño determinado. Los resultados se pueden visualizar en el siguiente gráfico:
+ \begin{figure}[ht!]
+ \centering
+ \includegraphics[scale=0.7]{img/ratioclosest.png}
+ \caption{Tiempo de ejecución vs. Cantidad de ciudades}
+ \end{figure}
+ 
+  \begin{figure}[ht!]
+ \centering
+ \includegraphics[scale=0.7]{img/ratioclosest.png}
+ \caption{Ratio distancia algoritmo / distancia óptima}
+ \end{figure}
 
-Claramente podemos apreciar que las alturas de los árboles son del orden de $O(log(n))$, destacando que los árboles con puntos distribuidos de manera uniforme tienen una altura mas baja en comparación a los árboles de distribución aleatoria.
-\newpage
-\subsection{Finland}
-El experimento consistía en medir cuánto demoraban en encontrar los vecinos más cercanos de una serie de puntos. Los resultados se pueden visualizar en el siguiente gráfico:
-
-
-Se puede apreciar que el tiempo de consulta es del orden $O(log(n))$, también se puede visualizar que los puntos de baja discrepancia demoran un poco menos en comparación a los puntos aleatorios.
-
-\newpage
-\subsection{Greece} 
-El experimento consistía en saber cuánto espacio ocupa cada KDTree, se usaron valores constantes en bytes para cada nodo. 
-
-Podemos ver que el tamaño de un KDTree es del orden $O(n)$ y además que para cada tipo de KDTree el tamaño ocupado es el mismo, esto se debe a que se insertan la misma cantidad de nodos y no existen estructuras externas.
-
-\subsection{Italy}
-\subsection{Japan}
-\subsection{Oman}
-\subsection{Qatar}
-\subsection{Sweden}
-\subsection{Uruguay}
-\subsection{Vietnam}
-\subsection{Western Sahara}
-\subsection{Zimbabwe}
 
 \newpage
 \section{Conclusiones}
