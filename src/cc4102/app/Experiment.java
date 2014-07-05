@@ -26,19 +26,19 @@ import java.util.Map;
 public class Experiment {
     static private Map<String, Double> countries = new HashMap<>();
     static {
-        //countries.put("canada", 1290319.0);
-        //countries.put("djibouti", 6656.0);
-        //countries.put("finland", 520527.0);
-        //countries.put("greece", 300899.0);
-        //countries.put("italy", 557315.0);
-        //countries.put("japan", 491924.0);
-        //countries.put("oman", 86891.0);
-        //countries.put("qatar", 9352.0);
-        //countries.put("sweden", 855597.0);
-        //countries.put("uruguay", 79114.0);
+        countries.put("canada", 1290319.0);
+        countries.put("djibouti", 6656.0);
+        countries.put("finland", 520527.0);
+        countries.put("greece", 300899.0);
+        countries.put("italy", 557315.0);
+        countries.put("japan", 491924.0);
+        countries.put("oman", 86891.0);
+        countries.put("qatar", 9352.0);
+        countries.put("sweden", 855597.0);
+        countries.put("uruguay", 79114.0);
         countries.put("vietnam", 569288.0);
-        //countries.put("western sahara", 27603.0);
-        //countries.put("zimbabwe", 95345.0);
+        countries.put("western sahara", 27603.0);
+        countries.put("zimbabwe", 95345.0);
     }
 
     static private PrintWriter pw;
@@ -58,12 +58,12 @@ public class Experiment {
 
             System.out.println("CNR");
             List<TSPPoint> points = InputParser.parseFile("input/"+e.getKey()+".txt");
-            EuclideanTSPResolver resolver = new ClosestNeighborResolver2();
+            EuclideanTSPResolver resolver = new ConvexHullResolver();
             long start = System.currentTimeMillis();
             HamiltonianCircuit circuit = resolver.resolveTSP(points);
             long end = System.currentTimeMillis();
             double d = circuit.distance();
-            builder.append("\n CNR    ").append(end-start).append(";").append(d).append(";")
+            builder.append(end-start).append(";").append(d).append(";")
                     .append(d/e.getValue()).append(" ");
             System.out.println(e.getKey());
             /*points = InputParser.parseFile("input/"+e.getKey()+".txt");
